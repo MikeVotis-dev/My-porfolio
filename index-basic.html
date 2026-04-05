@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title> MikeVotis-iPortfolio</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="https://yt3.googleusercontent.com/pcLEsklGqMVzjUTTf-Sxmk4lj9FfudiAOTqlA7dYZjmjnIc-ecSGFSF37sD_Z9aXDMeWaXCjlQ=s160-c-k-c0x00ffffff-no-rj" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --accent-gold: #f4b942;
+      --accent-blue: #56ccf2;
+      --soft-black: #0a0a0a;
+      --panel-black: #111111;
+      --panel-border: rgba(255, 255, 255, 0.08);
+      --text-soft: rgba(255, 255, 255, 0.78);
+    }
+
+    body.index-page,
+    .section,
+    .light-background,
+    .footer {
+      background: var(--soft-black) !important;
+      color: #ffffff !important;
+      font-family: "Poppins", sans-serif;
+      font-weight: 700;
+    }
+
+    p,
+    li,
+    span,
+    a,
+    label,
+    input,
+    textarea,
+    button {
+      font-weight: 700 !important;
+    }
+
+    p {
+      color: var(--text-soft) !important;
+      line-height: 1.9;
+    }
+
+    strong,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: #ffffff !important;
+    }
+
+    .container,
+    .container-fluid {
+      padding-left: 28px !important;
+      padding-right: 28px !important;
+    }
+
+    .section-title,
+    #about .container,
+    #resume .container,
+    #contact .container,
+    #skills .container,
+    #stats .container {
+      max-width: 1140px;
+    }
+
+    .section-title h2,
+    #about h2,
+    #resume h2,
+    #contact h2,
+    #skills h2 {
+      color: #ffffff !important;
+      letter-spacing: 0.04em;
+    }
+
+    .hero .container {
+      background: linear-gradient(135deg, rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.38));
+      padding: 28px 32px;
+      border-radius: 22px;
+      max-width: 640px;
+      margin-left: 40px;
+      backdrop-filter: blur(4px);
+      box-shadow: 0 18px 60px rgba(0, 0, 0, 0.34);
+    }
+
+    .hero h2,
+    .hero p {
+      text-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+    }
+
+    .highlight-gold {
+      color: var(--accent-gold) !important;
+    }
+
+    .highlight-blue {
+      color: var(--accent-blue) !important;
+    }
+
+    .stats-item,
+    .info-wrap,
+    .contact-form,
+    .progress,
+    #about .row,
+    #resume .section-title,
+    #contact .section-title,
+    #skills .skills-content {
+      background: var(--panel-black);
+      border: 1px solid var(--panel-border);
+      border-radius: 18px;
+      padding: 22px;
+      box-shadow: 0 12px 34px rgba(0, 0, 0, 0.22);
+    }
+
+    #about .row,
+    #skills .skills-content {
+      margin-top: 10px;
+    }
+
+    #contact .section-title {
+      margin-bottom: 28px;
+    }
+
+    #contact .section-title p {
+      max-width: 680px;
+      margin-top: 18px;
+    }
+
+    .progress {
+      margin-bottom: 18px;
+    }
+
+    .progress:last-child {
+      margin-bottom: 0;
+    }
+
+    .showcase-grid {
+      row-gap: 28px;
+    }
+
+    .showcase-card {
+      height: 100%;
+      overflow: hidden;
+      background: linear-gradient(180deg, rgba(17, 17, 17, 0.98), rgba(8, 8, 8, 0.98));
+      border: 1px solid var(--panel-border);
+      border-radius: 22px;
+      box-shadow: 0 14px 40px rgba(0, 0, 0, 0.28);
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .showcase-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(244, 185, 66, 0.45);
+      box-shadow: 0 18px 44px rgba(0, 0, 0, 0.34);
+    }
+
+    .showcase-image {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      display: block;
+      background: #050505;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .showcase-body {
+      padding: 24px;
+    }
+
+    .showcase-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      margin-bottom: 16px;
+      border-radius: 999px;
+      background: rgba(86, 204, 242, 0.14);
+      color: var(--accent-blue) !important;
+      font-size: 0.84rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .showcase-body h3 {
+      margin-bottom: 14px;
+      font-size: 1.45rem;
+    }
+
+    .showcase-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .showcase-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 12px 18px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--accent-gold), #d89016);
+      color: #111111 !important;
+      font-weight: 800 !important;
+      text-decoration: none;
+      transition: transform 0.2s ease, filter 0.2s ease;
+    }
+
+    .showcase-button.secondary {
+      background: rgba(255, 255, 255, 0.08);
+      color: #ffffff !important;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .showcase-button:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.05);
+    }
+
+    .showcase-note {
+      margin-top: 18px;
+      color: rgba(255, 255, 255, 0.62) !important;
+      font-size: 0.95rem;
+    }
+
+    .progress .progress-bar-wrap {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .progress .progress-bar {
+      background: linear-gradient(90deg, var(--accent-gold), var(--accent-blue));
+    }
+
+    .stats-item span,
+    .stats-item p,
+    .stats-item strong,
+    .stats-item .purecounter,
+    .progress .skill,
+    .progress .skill span,
+    .progress .skill .val,
+    .progress .val {
+      color: #ffffff !important;
+    }
+
+    .progress .skill {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 10px;
+      letter-spacing: 0.02em;
+    }
+
+    .info-item i,
+    .stats-item i,
+    .social-links a:hover,
+    .navmenu a:hover,
+    .navmenu .active {
+      color: var(--accent-gold) !important;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      background: #050505;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: #ffffff;
+    }
+
+    .contact-form button,
+    #channel {
+      background: linear-gradient(90deg, var(--accent-gold), #d89016);
+      border: none;
+      color: #111111;
+      font-weight: 800 !important;
+    }
+
+    .contact-form button:hover,
+    #channel:hover {
+      filter: brightness(1.05);
+    }
+
+    hr {
+      border-color: rgba(255, 255, 255, 0.12);
+    }
+
+    @media (max-width: 768px) {
+      .container,
+      .container-fluid {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+      }
+
+      .hero .container {
+        margin-left: 0;
+        padding: 22px 20px;
+      }
+    }
+  </style>
+
+  <!-- =======================================================
+  * Template Name: iPortfolio
+  * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
+  * Updated: Jun 29 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body class="index-page">
+
+  
+
+  <!-- Site language toggle (top-right) -->
+  <button id="site-lang-toggle" class="btn btn-sm btn-outline-primary" style="position:fixed; top:12px; right:12px; z-index:99999; background: rgba(255, 255, 255, 0); color:#fff; border-color: rgba(255,255,255,0.12);">EN / ΕΛ</button>
+
+  <!-- Contrast helper: when user scrolls away from the hero, add .alt to make the button visible on light backgrounds -->
+  <style>
+    /* applied when hero is not visible - gives a light background and dark text */
+    #site-lang-toggle.alt{
+      background: rgba(255,255,255,0.96) !important;
+      color: #111 !important;
+      border-color: rgba(0,0,0,0.12) !important;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    }
+  </style>
+
+  <header id="header" class="header dark-background d-flex flex-column">
+    <i class="header-toggle d-xl-none bi bi-list"></i>
+
+    <div class="profile-img">
+      <img src="assets/img/my-profile-img.jpg" alt="" class="img-fluid rounded-circle">
+    </div>
+
+    <a href="index.html" class="logo d-flex align-items-center justify-content-center">
+      <!-- Uncomment the line below if you also wish to use an image logo -->
+      <!-- <img src="assets/img/logo.png" alt=""> -->
+      <h1 class="sitename">Mike Votis</h1>
+    </a>
+
+    <div class="social-links text-center">
+      <a href="https://www.snapchat.com/@mikevotis" target="_blank" class="snapchat"><i class="bi bi-snapchat"></i></a>
+      <a href="https://www.facebook.com/MikeVotis2150"target="_blank" class="facebook"><i class="bi bi-facebook"></i></a>
+      <a href="https://www.youtube.com/@mikevotis" target="_blank" class="google-plus"><i class="bi bi-youtube"></i></a>
+      
+    </div>
+
+    <nav id="navmenu" class="navmenu">
+      <ul>
+        <li><a href="#hero" class="active"><i class="bi bi-house navicon"></i>Home</a></li>
+        <li><a href="#about"><i class="bi bi-person navicon"></i> About</a></li>
+        <li><a href="#resume"><i class="bi bi-file-earmark-text navicon"></i> Resume</a></li>
+        <li><a href="#projects"><i class="bi bi-github navicon"></i> Projects</a></li>
+        <li><a href="#certifications"><i class="bi bi-patch-check navicon"></i> Certifications</a></li>
+        
+         
+        </li>
+        <li><a href="#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
+      </ul>
+    </nav>
+
+  </header>
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section dark-background">
+      <img src="assets/img/hero-bg.jpg" alt="" data-aos="fade-in" class="">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <h2><span class="highlight-gold">Mike</span><span class="highlight-blue">Votis</span></h2>
+        <p>I'm <span class="typed" data-typed-items="Youtuber,Developer,Designer, Editor ">Designer</span></p>
+      </div>
+    </section><!-- /Hero Section -->
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+
+    <!-- about section language button removed; header toggle controls language -->
+        <h2>About <span class="highlight-gold">me</span></h2>
+        <p>I am Michalis Votis, a twelve year old kid who has been involved in <span class="highlight-blue">robotics</span> and <span class="highlight-gold">programming</span> since I was 7 years old. I have created a small channel on Youtube which I am trying to develop. I really like programming and web development and my dream is to become a <span class="highlight-blue">programmer</span>.</p>
+        <br>
+        <br>
+        <hr>
+        <br>
+        <br>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        
+         
+          
+          <h2><span class="highlight-gold">Web developer</span> &amp; <span class="highlight-blue">Youtuber</span></h2>
+          <br>
+          <br>
+            <div class="row">
+              <div class="col-lg-6">
+                <ul>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>7 January 2014</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>My channel:</strong> <a href="https://www.youtube.com/@mikevotis" target="_blank" id="channel" class="btn btn-primary">Mikevotis2150</a>
+
+                  <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>+306983370681</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>Thessaloniki, Greece</span></li>
+                  
+                </ul>
+              </div>
+              <div class="col-lg-6">
+                <ul>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>12</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>mikevotis67@gmail.com</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>School:</strong> <span>Anatolia College</span></li>
+                </ul>
+              </div>
+            </div>
+            <p class="py-3" id="about-paragraph">
+            I am a self-taught web developer and I have been learning programming languages such as <span class="highlight-gold">HTML</span>, <span class="highlight-blue">CSS</span>, JavaScript, Python, C++, and Java. I also have knowledge of video editing software such as Davinci Resolve and Photoshop. I am constantly trying to learn new things and improve my <span class="highlight-gold">skills</span>.
+            </p>
+            <!-- removed per-paragraph button: top toggle now controls all About texts -->
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /About Section -->
+
+    <!-- Stats Section -->
+    <section id="stats" class="stats section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item">
+              <i class="bi bi-emoji-smile"></i>
+              <span data-purecounter-start="0" data-purecounter-end="10" data-purecounter-duration="1" class="purecounter"></span>
+              <p><strong>Happy Clients</strong> 
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item">
+              <i class="bi bi-journal-richtext"></i>
+              <span data-purecounter-start="0" data-purecounter-end="12" data-purecounter-duration="1" class="purecounter"></span>
+              <p><strong>Projects</strong> 
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item">
+              <i class="bi bi-headset"></i>
+              <span data-purecounter-start="0" data-purecounter-end="145" data-purecounter-duration="1" class="purecounter"></span>
+              <p><strong>Hours Of Support</strong> 
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item">
+              <i class="bi bi-people"></i>
+              <span data-purecounter-start="0" data-purecounter-end="2" data-purecounter-duration="1" class="purecounter"></span>
+              <p><strong>Hard Workers</strong> 
+            </div>
+          </div><!-- End Stats Item -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Stats Section -->
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills section light-background">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Skills</h2>
+       
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row skills-content skills-animation">
+
+          <div class="col-lg-6">
+
+            <div class="progress">
+              <span class="skill"><span>HTML</span> <i class="val">100%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div><!-- End Skills Item -->
+
+            <div class="progress">
+              <span class="skill"><span>CSS</span> <i class="val">80%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div><!-- End Skills Item -->
+
+            <div class="progress">
+              <span class="skill"><span>JavaScript</span> <i class="val">30%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div><!-- End Skills Item -->
+
+            <div class="progress">
+              <span class="skill"><span>Python</span> <i class="val">80%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div><!-- End Skills Item -->
+
+          </div>
+
+          <div class="col-lg-6">
+
+            <div class="progress">
+              <span class="skill"><span>Davinchi resolve</span> <i class="val">70%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div><!-- End Skills Item -->
+
+            <div class="progress">
+              <span class="skill"><span>Canva</span> <i class="val">98%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="98" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div><!-- End Skills Item -->
+
+            <div class="progress">
+              <span class="skill"><span>Photoshop</span> <i class="val">55%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="55"></div>
+              </div>
+            </div><!-- End Skills Item -->
+
+            <div class="progress">
+              <span class="skill"><span>Computers</span> <i class="val">85%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div><!-- End Skills Item -->
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Skills Section -->
+
+    <!-- Resume Section -->
+    <section id="resume" class="resume section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Resume</h2>
+        <p>Hi! I'm Michalis Votis, I'm 12 years old and I've loved robotics and programming since I was a kid. I started when I was 7 years old and since then I've been trying to learn new things all the time.
+
+I created a small YouTube channel, where I develop step by step. I really like programming and web development, and my dream is to become a programmer.
+
+I'm learning languages ​​like HTML, CSS, JavaScript, Python, C++ and Java, while also experimenting with video and graphics tools like DaVinci Resolve, Photoshop and Canva.
+
+I'm always trying to evolve, create new projects and share my ideas with others. 🚀</p>
+      </div><!-- End Section Title -->
+
+    </section><!-- /Resume Section -->
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Projects</h2>
+        <p>A space for my best work. Each project card can link directly to my GitHub.</p>
+      </div>
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row showcase-grid">
+          <div class="col-lg-6">
+            <article class="showcase-card">
+              <img src="assets/img/project-placeholder.svg" alt="Project placeholder image" class="showcase-image">
+              <div class="showcase-body">
+                <span class="showcase-tag">GitHub Project</span>
+                <h3>Project Title</h3>
+                <p>Add a short description here. Replace the image and the GitHub link when you are ready.</p>
+                <div class="showcase-links">
+                  <a href="https://github.com/your-username/your-repo" target="_blank" rel="noopener noreferrer" class="showcase-button">Open on GitHub</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <p class="showcase-note">Duplicate the card above to add more projects later.</p>
+      </div>
+
+    </section><!-- /Projects Section -->
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="section">
+
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Certifications</h2>
+        <p>A section for my certificates, courses and achievements. Each card opens a details page with more information.</p>
+      </div>
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row showcase-grid">
+          <div class="col-lg-6">
+            <article class="showcase-card">
+              <img src="assets/img/certification-placeholder.svg" alt="Certification placeholder image" class="showcase-image">
+              <div class="showcase-body">
+                <span class="showcase-tag">Certificate</span>
+                <h3>Certification Title</h3>
+                <p>Add the certification image, issuer, date and what you learned here.</p>
+                <div class="showcase-links">
+                  <a href="certification-details.html" class="showcase-button">View Details</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <p class="showcase-note">Duplicate the card above to add more certifications later.</p>
+      </div>
+
+    </section><!-- /Certifications Section -->
+
+      <!-- Contact Section -->
+      <section id="contact" class="contact section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Contact</h2>
+        <p>Feel free to send me a message for collaborations, projects, or anything you would like to ask.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-5">
+
+            <div class="info-wrap">
+              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
+                <i class="bi bi-geo-alt flex-shrink-0"></i>
+                <div>
+                  <h3>Address</h3>
+                  <p>Thermi,Thessaloniki Greece 57001</p>
+                </div>
+              </div><!-- End Info Item -->
+
+              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
+                <i class="bi bi-telephone flex-shrink-0"></i>
+                <div>
+                  <h3>Call Us</h3>
+                  <p>6983370681</p>
+                </div>
+              </div><!-- End Info Item -->
+
+              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
+                <i class="bi bi-envelope flex-shrink-0"></i>
+                <div>
+                  <h3>Email Us</h3>
+                  <p>mikevotis67@gmail.com</p>
+                </div>
+              </div><!-- End Info Item -->
+
+              <iframe class="contact-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7210.620191760796!2d23.014745797206626!3d40.54838593409542!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a8408c487416eb%3A0x1266edfbf6e55304!2zzpjOrc-BzrzOtyA1NzAgMDE!5e0!3m2!1sel!2sgr!4v1775292229793!5m2!1sel!2sgr" style="border:0; width: 100%; height: 240px; display: block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+          </div>
+
+          <div class="col-lg-7">
+            <!-- Switched to Formspree to avoid local PHP: replace YOUR_FORMSPREE_ID below -->
+            <form action="https://formspree.io/f/xgvlzzee" method="POST" class="contact-form" data-aos="fade-up" data-aos-delay="200">
+              <div class="row gy-4">
+
+                <div class="col-md-6">
+                  <label for="name-field" class="pb-2">Your Name</label>
+                  <input type="text" name="name" id="name-field" class="form-control" required="">
+                </div>
+
+                <div class="col-md-6">
+                  <label for="email-field" class="pb-2">Your Email</label>
+                  <input type="email" class="form-control" name="email" id="email-field" required="">
+                </div>
+
+                <div class="col-md-12">
+                  <label for="subject-field" class="pb-2">Subject</label>
+                  <input type="text" class="form-control" name="subject" id="subject-field" required="">
+                </div>
+
+                <div class="col-md-12">
+                  <label for="message-field" class="pb-2">Message</label>
+                  <textarea class="form-control" name="message" rows="10" id="message-field" required=""></textarea>
+                </div>
+
+                <div class="col-md-12 text-center">
+                  <div class="loading">Loading</div>
+                  <div class="error-message"></div>
+                  <div class="sent-message">Your message has been sent. Thank you!</div>
+
+                  <!-- Formspree requires a reply-to field name of _replyto for some integrations -->
+                  <input type="hidden" name="_replyto" id="_replyto-field">
+
+                  <button type="submit">Send Message</button>
+                </div>
+
+              </div>
+            </form>
+          </div><!-- End Contact Form -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Contact Section -->
+
+  </main>
+
+  <footer id="footer" class="footer position-relative light-background">
+
+    <div class="container">
+      <div class="copyright text-center ">
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">MikeVotis</strong> <span>All Rights Reserved</span></p>
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you've purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> Distributed by <a href="https://themewagon.com">ThemeWagon</a>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <!-- Formspree handling script -->
+  <script>
+    (function(){
+      const form = document.querySelector('#contact form') || document.querySelector('form[action*="formspree.io"]');
+      if (!form) return;
+
+      const emailField = form.querySelector('input[name="email"]');
+      const replyto = form.querySelector('input[name="_replyto"]');
+      const loading = form.querySelector('.loading');
+      const errorEl = form.querySelector('.error-message');
+      const successEl = form.querySelector('.sent-message');
+
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        errorEl.style.display = 'none';
+        successEl.style.display = 'none';
+        loading.style.display = 'block';
+
+        if (replyto && emailField) replyto.value = emailField.value;
+
+        const action = form.getAttribute('action');
+        const formData = new FormData(form);
+
+        fetch(action, {
+          method: 'POST',
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        }).then(response => {
+          loading.style.display = 'none';
+          if (response.ok) {
+            successEl.style.display = 'block';
+            form.reset();
+          } else {
+            response.json().then(data => {
+              errorEl.textContent = (data && data.error) ? data.error : 'An error occurred while sending the message.';
+              errorEl.style.display = 'block';
+            }).catch(() => {
+              errorEl.textContent = 'An error occurred while sending the message.';
+              errorEl.style.display = 'block';
+            });
+          }
+        }).catch(() => {
+          loading.style.display = 'none';
+          errorEl.textContent = 'Could not send message — check your network.';
+          errorEl.style.display = 'block';
+        });
+      });
+    })();
+  </script>
+
+  <!-- Site-wide language toggle (top button controls whole page) -->
+  <script>
+    (function(){
+  // use the top-right language button as the global language toggle
+  const topToggle = document.getElementById('site-lang-toggle');
+  if (!topToggle) return;
+
+      // translations map: exact English text -> Greek translation
+      const T = {
+        // navigation
+        'Home': 'Αρχική',
+        'About': 'Σχετικά',
+        'Resume': 'Βιογραφικό',
+        'Portfolio': 'Χαρτοφυλάκιο',
+        'Services': 'Υπηρεσίες',
+        'Contact': 'Επικοινωνία',
+
+        // hero / typed (static fallback)
+        "I'm": 'Είμαι',
+
+        // about section
+        'About me': 'Σχετικά με μένα',
+        'I am Michalis Votis, a twelve year old kid who has been involved in robotics and programming since I was 7 years old. I have created a small channel on Youtube which I am trying to develop. I really like programming and web development and my dream is to become a programmer.':
+          'Είμαι ο Μιχάλης Βότης, ένα δωδεκάχρονο παιδί που ασχολείται με τη ρομποτική και τον προγραμματισμό από τα 7 μου χρόνια. Έχω δημιουργήσει ένα μικρό κανάλι στο YouTube που προσπαθώ να αναπτύξω. Μου αρέσει πολύ ο προγραμματισμός και η ανάπτυξη ιστοσελίδων και το όνειρό μου είναι να γίνω προγραμματιστής.',
+        'Web developer & Youtuber': 'Προγραμματιστής Ιστοσελίδων & Youtuber',
+        'I am a self-taught web developer and I have been learning programming languages such as HTML, CSS, JavaScript, Python, C++, and Java. I also have knowledge of video editing software such as Davinci Resolve and Photoshop. I am constantly trying to learn new things and improve my skills.':
+          'Είμαι αυτοδίδακτος προγραμματιστής ιστοσελίδων και μαθαίνω γλώσσες προγραμματισμού όπως HTML, CSS, JavaScript, Python, C++, και Java. Επίσης γνωρίζω λογισμικά επεξεργασίας βίντεο όπως το Davinci Resolve και το Photoshop. Προσπαθώ συνεχώς να μαθαίνω νέα πράγματα και να βελτιώνω τις δεξιότητές μου.',
+
+        // custom resume paragraph (user edits) - split into sentences so text nodes match
+        "Hi! I'm Michalis Votis, I'm 12 years old and I've loved robotics and programming since I was a kid. I started when I was 7 years old and since then I've been trying to learn new things all the time.":
+          'Γεια! Είμαι ο Μιχάλης Βότης, είμαι 12 ετών και αγαπώ τη ρομποτική και τον προγραμματισμό από μικρός. Ξεκίνησα όταν ήμουν 7 ετών και από τότε προσπαθώ συνεχώς να μαθαίνω καινούρια πράγματα.',
+
+        "I created a small YouTube channel, where I develop step by step. I really like programming and web development, and my dream is to become a programmer.":
+          'Έχω δημιουργήσει ένα μικρό κανάλι στο YouTube, όπου αναπτύσσω βήμα-βήμα. Μου αρέσει πολύ ο προγραμματισμός και η ανάπτυξη ιστοσελίδων, και το όνειρό μου είναι να γίνω προγραμματιστής.',
+
+        "I'm learning languages ​​like HTML, CSS, JavaScript, Python, C++ and Java, while also experimenting with video and graphics tools like DaVinci Resolve, Photoshop and Canva.":
+          'Μαθαίνω γλώσσες όπως HTML, CSS, JavaScript, Python, C++ και Java, ενώ πειραματίζομαι με εργαλεία βίντεο και γραφικών όπως το DaVinci Resolve, το Photoshop και το Canva.',
+
+        "I'm always trying to evolve, create new projects and share my ideas with others. 🚀":
+          'Προσπαθώ πάντα να εξελίσσομαι, να δημιουργώ νέα έργα και να μοιράζομαι τις ιδέες μου με άλλους. 🚀',
+
+        // labels / info
+        'Birthday:': 'Ημερομηνία γέννησης:',
+        'My channel:': 'Το κανάλι μου:',
+        'Phone:': 'Τηλέφωνο:',
+        'City:': 'Πόλη:',
+        'Age:': 'Ηλικία:',
+        'Email:': 'Email:',
+        'School:': 'Σχολείο:',
+
+        // portfolio filters
+        'All': 'Όλα',
+        'App': 'Εφαρμογές',
+        'Product': 'Προϊόν',
+        'Branding': 'Branding',
+        'Books': 'Βιβλία',
+
+        // services & stats
+        'Services': 'Υπηρεσίες',
+        'Happy Clients': 'Ευχαριστημένοι Πελάτες',
+        'Projects': 'Έργα',
+        'Hours Of Support': 'Ώρες Υποστήριξης',
+        'Hard Workers': 'Σκληροί Εργαζόμενοι',
+
+        // skills
+        'Skills': 'Δεξιότητες',
+
+        // resume
+        'Resume': 'Βιογραφικό',
+        'Sumary': 'Περίληψη',
+        'Education': 'Εκπαίδευση',
+        'Professional Experience': 'Επαγγελματική Εμπειρία',
+
+        // contact
+        'Contact': 'Επικοινωνία',
+        'Address': 'Διεύθυνση',
+        'Call Us': 'Καλέστε μας',
+        'Email Us': 'Στείλτε μας Email',
+
+        // form labels & buttons
+        'Your Name': 'Το όνομά σας',
+        'Your Email': 'Το email σας',
+        'Subject': 'Θέμα',
+        'Message': 'Μήνυμα',
+        'Send Message': 'Αποστολή μηνύματος',
+        'Loading': 'Φόρτωση',
+        'Your message has been sent. Thank you!': 'Το μήνυμά σας στάλθηκε. Ευχαριστώ!',
+
+        'Certifications': 'Πιστοποιήσεις',
+        'A space for my best work. Each project card can link directly to my GitHub.': 'Ένας χώρος για τα καλύτερα έργα μου. Κάθε κάρτα project μπορεί να οδηγεί απευθείας στο GitHub μου.',
+        'GitHub Project': 'Project στο GitHub',
+        'Project Title': 'Τίτλος Project',
+        'Add a short description here. Replace the image and the GitHub link when you are ready.': 'Βάλε εδώ μια μικρή περιγραφή. Άλλαξε την εικόνα και το GitHub link όταν είσαι έτοιμος.',
+        'Open on GitHub': 'Άνοιγμα στο GitHub',
+        'Duplicate the card above to add more projects later.': 'Αντέγραψε την κάρτα πιο πάνω για να προσθέσεις κι άλλα projects αργότερα.',
+        'A section for my certificates, courses and achievements. Each card opens a details page with more information.': 'Ένα section για πιστοποιήσεις, courses και achievements. Κάθε κάρτα ανοίγει ξεχωριστή σελίδα με περισσότερες πληροφορίες.',
+        'Certificate': 'Πιστοποίηση',
+        'Certification Title': 'Τίτλος Πιστοποίησης',
+        'Add the certification image, issuer, date and what you learned here.': 'Βάλε εδώ την εικόνα της πιστοποίησης, τον φορέα, την ημερομηνία και τι έμαθες.',
+        'View Details': 'Δες Λεπτομέρειες',
+        'Duplicate the card above to add more certifications later.': 'Αντέγραψε την κάρτα πιο πάνω για να προσθέσεις κι άλλες πιστοποιήσεις αργότερα.',
+
+        // footer
+        'Copyright': 'Πνευματικά δικαιώματα',
+        'All Rights Reserved': 'Όλα τα δικαιώματα διατηρούνται',
+        'Designed by': 'Σχεδιάστηκε από',
+        'Distributed by': 'Διανέμεται από'
+      };
+
+  // precompute keys sorted by length (longer first) to avoid partial matches
+  const T_KEYS = Object.keys(T).sort((a,b)=>b.length - a.length);
+
+      // helper: translate text nodes using substring replacement from the map
+      function translateTextNodes(lang){
+        const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+          acceptNode(node){
+            if (!node.nodeValue || !node.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
+            const parent = node.parentNode && node.parentNode.nodeName;
+            if (parent === 'SCRIPT' || parent === 'STYLE' || parent === 'NOSCRIPT') return NodeFilter.FILTER_REJECT;
+            return NodeFilter.FILTER_ACCEPT;
+          }
+        }, false);
+
+        while(walker.nextNode()){
+          const node = walker.currentNode;
+          if (!node.__orig) node.__orig = node.nodeValue; // preserve original
+
+          if (lang === 'el'){
+            let newText = node.__orig;
+            // replace any mapping keys that appear inside the original text
+            T_KEYS.forEach(k => {
+              if (!k) return;
+              if (newText.indexOf(k) !== -1){
+                newText = newText.split(k).join(T[k]);
+              }
+            });
+            if (newText !== node.nodeValue) node.nodeValue = newText;
+          } else {
+            // restore original
+            node.nodeValue = node.__orig;
+          }
+        }
+      }
+
+      // helper: translate attributes like placeholder and value for inputs/buttons
+      function translateAttributes(lang){
+        const attrNames = ['placeholder','title','value','aria-label'];
+        attrNames.forEach(attr =>{
+          document.querySelectorAll('['+attr+']').forEach(el =>{
+            const val = el.getAttribute(attr);
+            if (!val) return;
+            if (!el.__origAttrs) el.__origAttrs = {};
+            if (!(attr in el.__origAttrs)) el.__origAttrs[attr] = val;
+            if (lang === 'el'){
+              let newVal = el.__origAttrs[attr];
+              T_KEYS.forEach(k => {
+                if (!k) return;
+                if (newVal.indexOf(k) !== -1) newVal = newVal.split(k).join(T[k]);
+              });
+              el.setAttribute(attr, newVal);
+            } else {
+              el.setAttribute(attr, el.__origAttrs[attr]);
+            }
+          });
+        });
+      }
+
+      function setLanguage(lang){
+        translateTextNodes(lang);
+        translateAttributes(lang);
+  // set title and aria-label so the icon can be used as a language toggle
+  const label = (lang === 'el') ? 'Γλώσσα: ΕΛ / EN' : 'Language: EN / ΕΛ';
+  topToggle.setAttribute('title', label);
+  topToggle.setAttribute('aria-label', label);
+        try{ localStorage.setItem('site-lang', lang); }catch(e){}
+        // update about section text too (if the function is available)
+        if (window.setAboutLanguage) {
+          try{ window.setAboutLanguage(lang); }catch(e){}
+        }
+      }
+
+      function toggle(){
+        const current = localStorage.getItem('site-lang') || 'en';
+        setLanguage(current === 'en' ? 'el' : 'en');
+      }
+
+      // init
+      const saved = localStorage.getItem('site-lang') || 'en';
+      setLanguage(saved);
+      // set the visible label for the toggle
+      topToggle.textContent = (saved === 'el') ? 'ΕΛ / EN' : 'EN / ΕΛ';
+      topToggle.addEventListener('click', function(){ toggle(); const cur = localStorage.getItem('site-lang') || 'en'; topToggle.textContent = (cur === 'el') ? 'ΕΛ / EN' : 'EN / ΕΛ'; });
+
+      // contrast: make the toggle dark-on-light when leaving the hero section
+      try{
+        const hero = document.getElementById('hero');
+        if (hero && 'IntersectionObserver' in window){
+          const obs = new IntersectionObserver(entries =>{
+            entries.forEach(entry =>{
+              if (entry.isIntersecting){
+                topToggle.classList.remove('alt');
+              } else {
+                topToggle.classList.add('alt');
+              }
+            });
+          }, { root: null, threshold: 0 });
+          obs.observe(hero);
+        } else {
+          // fallback: toggle based on scroll position
+          const onScroll = () => {
+            const heroBottom = document.getElementById('hero') ? document.getElementById('hero').getBoundingClientRect().bottom : 0;
+            if (heroBottom <= 0) topToggle.classList.add('alt'); else topToggle.classList.remove('alt');
+          };
+          window.addEventListener('scroll', onScroll);
+          onScroll();
+        }
+      }catch(e){console.error(e)}
+    })();
+  </script>
+
+</body>
+
+</html>`

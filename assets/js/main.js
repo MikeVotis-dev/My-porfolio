@@ -1,0 +1,311 @@
+/**
+* Template Name: iPortfolio
+* Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
+* Updated: Jun 29 2024 with Bootstrap v5.3.3
+* Author: BootstrapMade.com
+* License: https://bootstrapmade.com/license/
+*/
+
+(function() {
+  "use strict";
+
+  /**
+   * Header toggle
+   */
+  const headerToggleBtn = document.querySelector('.header-toggle');
+
+  function headerToggle() {
+    document.querySelector('#header').classList.toggle('header-show');
+    headerToggleBtn.classList.toggle('bi-list');
+    headerToggleBtn.classList.toggle('bi-x');
+    // move the toggle button to the right when header is shown, back to left when hidden
+    if (document.querySelector('#header').classList.contains('header-show')) {
+      headerToggleBtn.classList.add('to-right');
+      headerToggleBtn.classList.remove('to-left');
+    } else {
+      headerToggleBtn.classList.add('to-left');
+      headerToggleBtn.classList.remove('to-right');
+    }
+  }
+  headerToggleBtn.addEventListener('click', headerToggle);
+
+  // initialize toggle position: left when header hidden, right when shown
+  if (headerToggleBtn) {
+    if (document.querySelector('#header').classList.contains('header-show')) {
+      headerToggleBtn.classList.add('to-right');
+    } else {
+      headerToggleBtn.classList.add('to-left');
+    }
+  }
+
+  /**
+   * Hide mobile nav on same-page/hash links
+   */
+  document.querySelectorAll('#navmenu a').forEach(navmenu => {
+    navmenu.addEventListener('click', () => {
+      if (document.querySelector('.header-show')) {
+        headerToggle();
+      }
+    });
+
+  });
+
+  /**
+   * Toggle mobile nav dropdowns
+   */
+  document.querySelectorAll('.navmenu .toggle-dropdown').forEach(navmenu => {
+    navmenu.addEventListener('click', function(e) {
+      e.preventDefault();
+      this.parentNode.classList.toggle('active');
+      this.parentNode.nextElementSibling.classList.toggle('dropdown-active');
+      e.stopImmediatePropagation();
+    });
+  });
+
+  /**
+   * Preloader
+   */
+  const preloader = document.querySelector('#preloader');
+  if (preloader) {
+    window.addEventListener('load', () => {
+      preloader.remove();
+    });
+  }
+
+  /**
+   * Scroll top button
+   */
+  let scrollTop = document.querySelector('.scroll-top');
+
+  function toggleScrollTop() {
+    if (scrollTop) {
+      window.scrollY > 100 ? scrollTop.classList.add('active') : scrollTop.classList.remove('active');
+    }
+  }
+  scrollTop.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+
+  window.addEventListener('load', toggleScrollTop);
+  document.addEventListener('scroll', toggleScrollTop);
+
+  /**
+   * Animation on scroll function and init
+   */
+  function aosInit() {
+    AOS.init({
+      duration: 600,
+      easing: 'ease-in-out',
+      once: true,
+      mirror: false
+    });
+  }
+  window.addEventListener('load', aosInit);
+
+  /**
+   * Init typed.js
+   */
+  const selectTyped = document.querySelector('.typed');
+  if (selectTyped) {
+    let typed_strings = selectTyped.getAttribute('data-typed-items');
+    typed_strings = typed_strings.split(',');
+    new Typed('.typed', {
+      strings: typed_strings,
+      loop: true,
+      typeSpeed: 100,
+      backSpeed: 50,
+      backDelay: 2000
+    });
+  }
+
+  /**
+   * Initiate Pure Counter
+   */
+  new PureCounter();
+
+  /**
+   * About section language toggle (LANGUAGE:EN / EL) - only changes About section text
+   */
+  // about section language control (button removed from DOM). keep aboutSection ref.
+  const aboutSection = document.getElementById('about');
+
+  const aboutText = {
+    en: {
+      title: 'About me',
+      intro: "I am Michalis Votis, a twelve year old kid who has been involved in robotics and programming since I was 7 years old. I have created a small channel on Youtube which I am trying to develop. I really like programming and web development and my dream is to become a programmer.",
+      contentH2: 'UI/UX Designer & Web Developer.',
+      italic: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+      final: 'Officiis eligendi itaque labore et dolorum mollitia officiis optio vero. Quisquam sunt adipisci omnis et ut. Nulla accusantium dolor incidunt officia tempore. Et eius omnis. Cupiditate ut dicta maxime officiis quidem quia. Sed et consectetur qui quia repellendus itaque neque.'
+    },
+    el: {
+      title: 'Σχετικά με εμένα',
+      intro: 'Είμαι ο Μιχάλης Βότης, ένα παιδί δώδεκα ετών που ασχολείται με ρομποτική και προγραμματισμό από τα 7 μου χρόνια. Έχω δημιουργήσει ένα μικρό κανάλι στο YouTube που προσπαθώ να αναπτύξω. Μου αρέσει πολύ ο προγραμματισμός και η ανάπτυξη ιστοσελίδων και το όνειρό μου είναι να γίνω προγραμματιστής.',
+      contentH2: 'UI/UX Σχεδιαστής & Προγραμματιστής Web.',
+      italic: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+      final: 'Officiis eligendi itaque labore et dolorum mollitia officiis optio vero. Quisquam sunt adipisci omnis et ut. Nulla accusantium dolor incidunt officia tempore. Et eius omnis. Cupiditate ut dicta maxime officiis quidem quia. Sed et consectetur qui quia repellendus itaque neque.'
+    }
+    
+    
+  };
+  
+
+  function setAboutLanguage(lang) {
+    if (!aboutSection) return;
+    // Title and first paragraph (the section's immediate children)
+    const sectionTitle = aboutSection.querySelector('h2');
+    const firstP = aboutSection.querySelector(':scope > p');
+
+    if (sectionTitle) sectionTitle.textContent = aboutText[lang].title;
+    if (firstP) firstP.textContent = aboutText[lang].intro;
+
+    // Inside the .content column: second h2, italic paragraph, final paragraph
+    const content = aboutSection.querySelector('.content');
+    if (content) {
+      const contentH2 = content.querySelector('h2');
+      const italicP = content.querySelector('.fst-italic');
+      const paragraphs = content.querySelectorAll('p.py-3');
+      if (contentH2) contentH2.textContent = aboutText[lang].contentH2;
+      if (italicP) italicP.textContent = aboutText[lang].italic;
+      // the last paragraph in content is the final one; try to set it
+      if (paragraphs && paragraphs.length > 1) {
+        paragraphs[1].textContent = aboutText[lang].final;
+      }
+    }
+
+  // expose current language label via document title attribute (caller handles UI)
+  try{ document.documentElement.setAttribute('data-site-lang', lang); }catch(e){}
+    localStorage.setItem('about_lang', lang);
+  }
+
+  // Initialize from storage or default to 'en'
+  try {
+    const saved = localStorage.getItem('about_lang') || 'en';
+    setAboutLanguage(saved);
+  } catch (e) {
+    // localStorage may be unavailable; ignore
+  }
+
+  // expose the function globally so other controls can call it (e.g., header language toggle)
+  window.setAboutLanguage = setAboutLanguage;
+
+  /**
+   * Animate the skills items on reveal
+   */
+  let skillsAnimation = document.querySelectorAll('.skills-animation');
+  skillsAnimation.forEach((item) => {
+    new Waypoint({
+      element: item,
+      offset: '80%',
+      handler: function(direction) {
+        let progress = item.querySelectorAll('.progress .progress-bar');
+        progress.forEach(el => {
+          el.style.width = el.getAttribute('aria-valuenow') + '%';
+        });
+      }
+    });
+  });
+
+  /**
+   * Initiate glightbox
+   */
+  const glightbox = GLightbox({
+    selector: '.glightbox'
+  });
+
+  /**
+   * Init isotope layout and filters
+   */
+  document.querySelectorAll('.isotope-layout').forEach(function(isotopeItem) {
+    let layout = isotopeItem.getAttribute('data-layout') ?? 'masonry';
+    let filter = isotopeItem.getAttribute('data-default-filter') ?? '*';
+    let sort = isotopeItem.getAttribute('data-sort') ?? 'original-order';
+
+    let initIsotope;
+    imagesLoaded(isotopeItem.querySelector('.isotope-container'), function() {
+      initIsotope = new Isotope(isotopeItem.querySelector('.isotope-container'), {
+        itemSelector: '.isotope-item',
+        layoutMode: layout,
+        filter: filter,
+        sortBy: sort
+      });
+    });
+
+    isotopeItem.querySelectorAll('.isotope-filters li').forEach(function(filters) {
+      filters.addEventListener('click', function() {
+        isotopeItem.querySelector('.isotope-filters .filter-active').classList.remove('filter-active');
+        this.classList.add('filter-active');
+        initIsotope.arrange({
+          filter: this.getAttribute('data-filter')
+        });
+        if (typeof aosInit === 'function') {
+          aosInit();
+        }
+      }, false);
+    });
+
+  });
+
+  /**
+   * Init swiper sliders
+   */
+  function initSwiper() {
+    document.querySelectorAll(".init-swiper").forEach(function(swiperElement) {
+      let config = JSON.parse(
+        swiperElement.querySelector(".swiper-config").innerHTML.trim()
+      );
+
+      if (swiperElement.classList.contains("swiper-tab")) {
+        initSwiperWithCustomPagination(swiperElement, config);
+      } else {
+        new Swiper(swiperElement, config);
+      }
+    });
+  }
+
+  window.addEventListener("load", initSwiper);
+
+  /**
+   * Correct scrolling position upon page load for URLs containing hash links.
+   */
+  window.addEventListener('load', function(e) {
+    if (window.location.hash) {
+      if (document.querySelector(window.location.hash)) {
+        setTimeout(() => {
+          let section = document.querySelector(window.location.hash);
+          let scrollMarginTop = getComputedStyle(section).scrollMarginTop;
+          window.scrollTo({
+            top: section.offsetTop - parseInt(scrollMarginTop),
+            behavior: 'smooth'
+          });
+        }, 100);
+      }
+    }
+  });
+
+  /**
+   * Navmenu Scrollspy
+   */
+  let navmenulinks = document.querySelectorAll('.navmenu a');
+
+  function navmenuScrollspy() {
+    navmenulinks.forEach(navmenulink => {
+      if (!navmenulink.hash) return;
+      let section = document.querySelector(navmenulink.hash);
+      if (!section) return;
+      let position = window.scrollY + 200;
+      if (position >= section.offsetTop && position <= (section.offsetTop + section.offsetHeight)) {
+        document.querySelectorAll('.navmenu a.active').forEach(link => link.classList.remove('active'));
+        navmenulink.classList.add('active');
+      } else {
+        navmenulink.classList.remove('active');
+      }
+    })
+  }
+  window.addEventListener('load', navmenuScrollspy);
+  document.addEventListener('scroll', navmenuScrollspy);
+
+})();
