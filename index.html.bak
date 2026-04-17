@@ -415,7 +415,6 @@
 
         
          
-          
           <h2><span class="highlight-gold">Web developer</span> &amp; <span class="highlight-blue">Youtuber</span></h2>
           <br>
           <br>
@@ -425,6 +424,7 @@
                   <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>7 January 2014</span></li>
                   <li><i class="bi bi-chevron-right"></i> <strong>My channel:</strong> <a href="https://www.youtube.com/@mikevotis" target="_blank" id="channel" class="btn btn-primary">Mikevotis2150</a>
 
+                  <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>+306983370681</span></li>
                   <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>Thessaloniki, Greece</span></li>
                   
                 </ul>
@@ -712,7 +712,13 @@ Fun and simple game mechanics</p>
                 </div>
               </div><!-- End Info Item -->
 
-              <!-- phone removed -->
+              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
+                <i class="bi bi-telephone flex-shrink-0"></i>
+                <div>
+                  <h3>Call Us</h3>
+                  <p>6983370681</p>
+                </div>
+              </div><!-- End Info Item -->
 
               <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
                 <i class="bi bi-envelope flex-shrink-0"></i>
@@ -935,7 +941,7 @@ Fun and simple game mechanics</p>
         // resume
         'Resume': 'Βιογραφικό',
         'Sumary': 'Περίληψη',
-        'Education': 'Εκπαίδευση',
+        'Education': 'Εκπαιδευση',
         'Professional Experience': 'Επαγγελματική Εμπειρία',
 
         // contact
@@ -1042,7 +1048,7 @@ Fun and simple game mechanics</p>
         try{ localStorage.setItem('site-lang', lang); }catch(e){}
         // update about section text too (if the function is available)
         if (window.setAboutLanguage) {
-          try{ window.setAboutLanguage(lang); }catch(e){}
+          try{ window.setAboutLanguage(lang);}catch(e){}
         }
       }
 
@@ -1087,4 +1093,4 @@ Fun and simple game mechanics</p>
 
 </body>
 
-</html>`
+</html>
