@@ -188,8 +188,9 @@ h6 {
   width: 120px;
   height: 120px;
   object-fit: cover;
-  object-position: center;
+  object-position: 50% 32%;
   border-radius: 50%;
+  overflow: hidden;
   border: 8px solid color-mix(in srgb, var(--default-color), transparent 85%);
 }
 
