@@ -47,6 +47,16 @@
       font-weight: 700;
     }
 
+    body.index-page {
+      display: flex;
+      flex-direction: column;
+      min-height: 100dvh;
+    }
+
+    .main {
+      flex: 1 0 auto;
+    }
+
     p,
     li,
     span,
@@ -301,6 +311,15 @@
     .contact-form button:hover,
     #channel:hover {
       filter: brightness(1.05);
+    }
+
+    .footer {
+      margin: auto 0 0 !important;
+      padding: 36px 0 0 !important;
+    }
+
+    .footer-box {
+      margin-bottom: 0;
     }
 
     hr {
@@ -806,6 +825,12 @@
                 <textarea class="form-control" name="message" rows="8" id="message-field" required></textarea>
               </div>
 
+              <div class="col-md-12">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your message has been sent. Thank you!</div>
+              </div>
+
               <div class="col-md-12 text-center">
                 <input type="hidden" name="_replyto" id="_replyto-field">
                 <button type="submit" class="contact-btn">Send Message</button>
@@ -868,12 +893,24 @@
       const loading = form.querySelector('.loading');
       const errorEl = form.querySelector('.error-message');
       const successEl = form.querySelector('.sent-message');
+      const submitButton = form.querySelector('button[type="submit"]');
+
+      function hideStatus(el) {
+        if (el) el.style.display = 'none';
+      }
+
+      function showStatus(el, message) {
+        if (!el) return;
+        if (typeof message === 'string') el.textContent = message;
+        el.style.display = 'block';
+      }
 
       form.addEventListener('submit', function(e) {
         e.preventDefault();
-        errorEl.style.display = 'none';
-        successEl.style.display = 'none';
-        loading.style.display = 'block';
+        hideStatus(errorEl);
+        hideStatus(successEl);
+        showStatus(loading);
+        if (submitButton) submitButton.disabled = true;
 
         if (replyto && emailField) replyto.value = emailField.value;
 
@@ -887,23 +924,25 @@
             'Accept': 'application/json'
           }
         }).then(response => {
-          loading.style.display = 'none';
+          hideStatus(loading);
           if (response.ok) {
-            successEl.style.display = 'block';
+            showStatus(successEl);
             form.reset();
           } else {
             response.json().then(data => {
-              errorEl.textContent = (data && data.error) ? data.error : 'An error occurred while sending the message.';
-              errorEl.style.display = 'block';
+              showStatus(
+                errorEl,
+                (data && data.error) ? data.error : 'An error occurred while sending the message.'
+              );
             }).catch(() => {
-              errorEl.textContent = 'An error occurred while sending the message.';
-              errorEl.style.display = 'block';
+              showStatus(errorEl, 'An error occurred while sending the message.');
             });
           }
         }).catch(() => {
-          loading.style.display = 'none';
-          errorEl.textContent = 'Could not send message — check your network.';
-          errorEl.style.display = 'block';
+          hideStatus(loading);
+          showStatus(errorEl, 'Could not send message - check your network.');
+        }).finally(() => {
+          if (submitButton) submitButton.disabled = false;
         });
       });
     })();
