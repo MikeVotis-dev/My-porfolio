@@ -489,10 +489,10 @@
   </div>
 
   <p class="about-description" id="about-paragraph">
-    I am a self-taught web developer and I have been learning programming languages such as
+    I am a developer and I have been learning programming languages such as
     <span class="highlight-gold">HTML</span>,
     <span class="highlight-blue">CSS</span>,
-    JavaScript, Python, C++, and Java.
+    JavaScript, Python, C++, and Java and I am taking courses in <a href="https://greece.alg.academy/" target=”_blank” >Algorithmics</a>.
     I also have knowledge of video editing software such as Davinci Resolve and Photoshop.
     I am constantly trying to learn new things and improve my
     <span class="highlight-gold">skills</span>.
@@ -507,7 +507,7 @@
       <div class="col-lg-3 col-md-6">
         <div class="stats-item">
           <i class="bi bi-emoji-smile"></i>
-          <span data-purecounter-start="0" data-purecounter-end="10" data-purecounter-duration="1" class="purecounter"></span>
+          <span data-purecounter-start="0" data-purecounter-end="2" data-purecounter-duration="1" class="purecounter"></span>
           <p><strong>Happy Clients</strong></p>
         </div>
       </div>
@@ -523,7 +523,7 @@
       <div class="col-lg-3 col-md-6">
         <div class="stats-item">
           <i class="bi bi-headset"></i>
-          <span data-purecounter-start="0" data-purecounter-end="145" data-purecounter-duration="1" class="purecounter"></span>
+          <span data-purecounter-start="0" data-purecounter-end="20" data-purecounter-duration="1" class="purecounter"></span>
           <p><strong>Hours Of Support</strong></p>
         </div>
       </div>
@@ -531,8 +531,8 @@
       <div class="col-lg-3 col-md-6">
         <div class="stats-item">
           <i class="bi bi-people"></i>
-          <span data-purecounter-start="0" data-purecounter-end="2" data-purecounter-duration="1" class="purecounter"></span>
-          <p><strong>Hard Workers</strong></p>
+          <span data-purecounter-start="0" data-purecounter-end="1" data-purecounter-duration="1" class="purecounter"></span>
+          <p><strong>Hard Worker</strong></p>
         </div>
       </div>
 
@@ -856,7 +856,7 @@
 
       <div class="credits text-center">
         <p>Designed by <a href="https://bootstrapmade.com/" target="_blank">BootstrapMade</a> and distributed by <a href="https://themewagon.com" target="_blank">ThemeWagon</a>.</p>
-        <p class="footer-made">But programmed by <span class="highlight-blue">Mike Votis</span> 🚀</p>
+        <p class="footer-made">But programmed by <span class="highlight-blue">Mike Votis</span> </p>
       </div>
     </div>
   </div>
@@ -955,7 +955,7 @@
   const topToggle = document.getElementById('site-lang-toggle');
   if (!topToggle) return;
 
-      // translations map: exact English text -> Greek translation
+      // text translations: exact English text -> Greek translation
       const T = {
         // navigation
         'Home': 'Αρχική',
@@ -967,6 +967,10 @@
 
         // hero / typed (static fallback)
         "I'm": 'Είμαι',
+        'Youtuber': 'Youtuber',
+        'Developer': 'Προγραμματιστής',
+        'Designer': 'Σχεδιαστής',
+        'Editor': 'Editor',
 
         // about section
         'About me': 'Σχετικά με μένα',
@@ -1037,18 +1041,22 @@
         'Your message has been sent. Thank you!': 'Το μήνυμά σας στάλθηκε. Ευχαριστώ!',
 
         'Certifications': 'Πιστοποιήσεις',
+        'Some of the skills and tools I use in programming, design, and content creation.': 'Μερικές από τις δεξιότητες και τα εργαλεία που χρησιμοποιώ στον προγραμματισμό, το design και τη δημιουργία περιεχομένου.',
         'A space for my best work. Each project card can link directly to my GitHub.': 'Ένας χώρος για τα καλύτερα έργα μου. Κάθε κάρτα project μπορεί να οδηγεί απευθείας στο GitHub μου.',
+        'A space for my best work. Each project card links directly to my GitHub.': 'Ένας χώρος για τα καλύτερα έργα μου. Κάθε κάρτα project οδηγεί απευθείας στο GitHub μου.',
         'GitHub Project': 'Project στο GitHub',
         'Project Title': 'Τίτλος Project',
         'Add a short description here. Replace the image and the GitHub link when you are ready.': 'Βάλε εδώ μια μικρή περιγραφή. Άλλαξε την εικόνα και το GitHub link όταν είσαι έτοιμος.',
         'Open on GitHub': 'Άνοιγμα στο GitHub',
         'Duplicate the card above to add more projects later.': 'Αντέγραψε την κάρτα πιο πάνω για να προσθέσεις κι άλλα projects αργότερα.',
+        'Feel free to send me a message for collaborations, projects, or anything you would like to ask.': 'Μπορείς να μου στείλεις μήνυμα για συνεργασίες, projects ή οτιδήποτε άλλο θα ήθελες να ρωτήσεις.',
         'A section for my certificates, courses and achievements. Each card opens a details page with more information.': 'Ένα section για πιστοποιήσεις, courses και achievements. Κάθε κάρτα ανοίγει ξεχωριστή σελίδα με περισσότερες πληροφορίες.',
         'Certificate': 'Πιστοποίηση',
         'Certification Title': 'Τίτλος Πιστοποίησης',
         'Add the certification image, issuer, date and what you learned here.': 'Βάλε εδώ την εικόνα της πιστοποίησης, τον φορέα, την ημερομηνία και τι έμαθες.',
         'View Details': 'Δες Λεπτομέρειες',
         'Duplicate the card above to add more certifications later.': 'Αντέγραψε την κάρτα πιο πάνω για να προσθέσεις κι άλλες πιστοποιήσεις αργότερα.',
+        'But programmed by': 'Αλλά προγραμματίστηκε από',
 
         // footer
         'Copyright': 'Πνευματικά δικαιώματα',
@@ -1057,8 +1065,111 @@
         'Distributed by': 'Διανέμεται από'
       };
 
-  // precompute keys sorted by length (longer first) to avoid partial matches
-  const T_KEYS = Object.keys(T).sort((a,b)=>b.length - a.length);
+      const HTML_T = {
+        [`About <span class="highlight-gold">me</span>`]:
+          `Σχετικά με <span class="highlight-gold">μένα</span>`,
+        [`I am <strong>Michail Votis</strong>, a twelve year old kid who has been involved in
+      <span class="highlight-blue">robotics</span> and
+      <span class="highlight-gold">programming</span> since I was 7 years old.
+      I have created a small channel on <strong>YouTube</strong> which I am trying to develop.
+      I really like programming and web development and my dream is to become a
+      <span class="highlight-blue">programmer</span>.`]:
+          `Είμαι ο <strong>Μιχάλης Βότης</strong>, ένα παιδί δώδεκα ετών που ασχολείται με
+      <span class="highlight-blue">ρομποτική</span> και
+      <span class="highlight-gold">προγραμματισμό</span> από τα 7 μου χρόνια.
+      Έχω δημιουργήσει ένα μικρό κανάλι στο <strong>YouTube</strong> που προσπαθώ να αναπτύξω.
+      Μου αρέσει πολύ ο προγραμματισμός και η ανάπτυξη ιστοσελίδων και το όνειρό μου είναι να γίνω
+      <span class="highlight-blue">προγραμματιστής</span>.`,
+        [`I am a self-taught web developer and I have been learning programming languages such as
+    <span class="highlight-gold">HTML</span>,
+    <span class="highlight-blue">CSS</span>,
+    JavaScript, Python, C++, and Java.
+    I also have knowledge of video editing software such as Davinci Resolve and Photoshop.
+    I am constantly trying to learn new things and improve my
+    <span class="highlight-gold">skills</span>.`]:
+          `Είμαι αυτοδίδακτος web developer και μαθαίνω γλώσσες προγραμματισμού όπως
+    <span class="highlight-gold">HTML</span>,
+    <span class="highlight-blue">CSS</span>,
+    JavaScript, Python, C++ και Java.
+    Επίσης έχω γνώσεις από εργαλεία επεξεργασίας βίντεο όπως το Davinci Resolve και το Photoshop.
+    Προσπαθώ συνεχώς να μαθαίνω νέα πράγματα και να βελτιώνω τις
+    <span class="highlight-gold">δεξιότητές</span> μου.`,
+        [`Hi! I'm <strong>Michail Votis</strong>, and I’m <strong>12 years old</strong>.
+        I have loved <span class="highlight-blue">robotics</span> and
+        <span class="highlight-gold">programming</span> since I was 7 years old,
+        and since then I have been trying to learn new things all the time.`]:
+          `Γεια! Είμαι ο <strong>Μιχάλης Βότης</strong> και είμαι <strong>12 ετών</strong>.
+        Αγαπώ τη <span class="highlight-blue">ρομποτική</span> και τον
+        <span class="highlight-gold">προγραμματισμό</span> από τα 7 μου χρόνια,
+        και από τότε προσπαθώ συνεχώς να μαθαίνω καινούρια πράγματα.`,
+        [`I created a small <strong>YouTube channel</strong>, which I continue to develop step by step.
+        I really enjoy programming and web development, and my dream is to become a
+        <span class="highlight-blue">programmer</span>.`]:
+          `Έχω δημιουργήσει ένα μικρό <strong>YouTube κανάλι</strong>, το οποίο συνεχίζω να αναπτύσσω βήμα βήμα.
+        Μου αρέσει πολύ ο προγραμματισμός και η ανάπτυξη ιστοσελίδων, και το όνειρό μου είναι να γίνω
+        <span class="highlight-blue">προγραμματιστής</span>.`,
+        [`I am learning languages like <span class="highlight-gold">HTML</span>,
+        <span class="highlight-blue">CSS</span>, JavaScript, Python, C++, and Java,
+        while also experimenting with creative tools like <strong>DaVinci Resolve</strong>,
+        <strong>Photoshop</strong>, and <strong>Canva</strong>.`]:
+          `Μαθαίνω γλώσσες όπως <span class="highlight-gold">HTML</span>,
+        <span class="highlight-blue">CSS</span>, JavaScript, Python, C++ και Java,
+        ενώ πειραματίζομαι και με δημιουργικά εργαλεία όπως το <strong>DaVinci Resolve</strong>,
+        το <strong>Photoshop</strong> και το <strong>Canva</strong>.`,
+        [`I am always trying to improve, create new projects, and share my ideas with others. 🚀`]:
+          `Προσπαθώ πάντα να βελτιώνομαι, να δημιουργώ νέα projects και να μοιράζομαι τις ιδέες μου με άλλους. 🚀`,
+        [`A smart budget calculator that helps users decide whether they should buy an item,
+              calculate monthly savings, and see when they can afford it.`]:
+          `Ένας έξυπνος budget calculator που βοηθά τους χρήστες να αποφασίσουν αν πρέπει να αγοράσουν ένα αντικείμενο,
+              να υπολογίσουν τις μηνιαίες αποταμιεύσεις τους και να δουν πότε μπορούν να το αποκτήσουν.`,
+        [`An interactive Python game using Turtle graphics, where the player clicks on the
+              moving turtle and tries to complete 5 catches to win.`]:
+          `Ένα διαδραστικό παιχνίδι σε Python με Turtle graphics, όπου ο παίκτης κάνει κλικ στην
+              κινούμενη χελώνα και προσπαθεί να πετύχει 5 catches για να κερδίσει.`,
+        [`© <span>Copyright</span> <strong class="px-1 sitename">MikeVotis</strong> <span>All Rights Reserved</span>`]:
+          `© <span>Πνευματικά δικαιώματα</span> <strong class="px-1 sitename">MikeVotis</strong> <span>Όλα τα δικαιώματα διατηρούνται</span>`,
+        [`Designed by <a href="https://bootstrapmade.com/" target="_blank">BootstrapMade</a> and distributed by <a href="https://themewagon.com" target="_blank">ThemeWagon</a>.`]:
+          `Σχεδιάστηκε από <a href="https://bootstrapmade.com/" target="_blank">BootstrapMade</a> και διανέμεται από <a href="https://themewagon.com" target="_blank">ThemeWagon</a>.`,
+        [`But programmed by <span class="highlight-blue">Mike Votis</span> 🚀`]:
+          `Αλλά προγραμματίστηκε από <span class="highlight-blue">Mike Votis</span> 🚀`
+      };
+
+      const T_KEYS = Object.keys(T).sort((a,b)=>b.length - a.length);
+      const HTML_KEYS = Object.keys(HTML_T);
+
+      function normalizeWhitespace(value){
+        return value.replace(/\s+/g, ' ').trim();
+      }
+
+      function replaceFromMap(value, map, keys){
+        let nextValue = value;
+        keys.forEach(key => {
+          if (!key || nextValue.indexOf(key) === -1) return;
+          nextValue = nextValue.split(key).join(map[key]);
+        });
+        return nextValue;
+      }
+
+      function translateHtmlBlocks(lang){
+        document.querySelectorAll('body *').forEach(el => {
+          if (['SCRIPT', 'STYLE', 'NOSCRIPT'].includes(el.tagName)) return;
+          if (el.children.length === 0) return;
+
+          if (!el.__origHtml) {
+            el.__origHtml = el.innerHTML;
+            el.__origHtmlNormalized = normalizeWhitespace(el.innerHTML);
+          }
+
+          if (lang === 'el'){
+            const matchedKey = HTML_KEYS.find(key => normalizeWhitespace(key) === el.__origHtmlNormalized);
+            if (matchedKey) {
+              el.innerHTML = HTML_T[matchedKey];
+            }
+          } else if (el.innerHTML !== el.__origHtml) {
+            el.innerHTML = el.__origHtml;
+          }
+        });
+      }
 
       // helper: translate text nodes using substring replacement from the map
       function translateTextNodes(lang){
@@ -1094,7 +1205,7 @@
 
       // helper: translate attributes like placeholder and value for inputs/buttons
       function translateAttributes(lang){
-        const attrNames = ['placeholder','title','value','aria-label'];
+        const attrNames = ['placeholder','title','value','aria-label','alt','data-typed-items'];
         attrNames.forEach(attr =>{
           document.querySelectorAll('['+attr+']').forEach(el =>{
             const val = el.getAttribute(attr);
@@ -1102,11 +1213,7 @@
             if (!el.__origAttrs) el.__origAttrs = {};
             if (!(attr in el.__origAttrs)) el.__origAttrs[attr] = val;
             if (lang === 'el'){
-              let newVal = el.__origAttrs[attr];
-              T_KEYS.forEach(k => {
-                if (!k) return;
-                if (newVal.indexOf(k) !== -1) newVal = newVal.split(k).join(T[k]);
-              });
+              const newVal = replaceFromMap(el.__origAttrs[attr], T, T_KEYS);
               el.setAttribute(attr, newVal);
             } else {
               el.setAttribute(attr, el.__origAttrs[attr]);
@@ -1116,17 +1223,15 @@
       }
 
       function setLanguage(lang){
+        translateHtmlBlocks(lang);
         translateTextNodes(lang);
         translateAttributes(lang);
-  // set title and aria-label so the icon can be used as a language toggle
-  const label = (lang === 'el') ? 'Γλώσσα: ΕΛ / EN' : 'Language: EN / ΕΛ';
-  topToggle.setAttribute('title', label);
-  topToggle.setAttribute('aria-label', label);
+        document.documentElement.setAttribute('lang', lang === 'el' ? 'el' : 'en');
+        // set title and aria-label so the icon can be used as a language toggle
+        const label = (lang === 'el') ? 'Γλώσσα: ΕΛ / EN' : 'Language: EN / ΕΛ';
+        topToggle.setAttribute('title', label);
+        topToggle.setAttribute('aria-label', label);
         try{ localStorage.setItem('site-lang', lang); }catch(e){}
-        // update about section text too (if the function is available)
-        if (window.setAboutLanguage) {
-          try{ window.setAboutLanguage(lang); }catch(e){}
-        }
       }
 
       function toggle(){
