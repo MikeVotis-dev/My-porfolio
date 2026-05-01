@@ -152,20 +152,29 @@ h6 {
   top: 12px;
   right: 12px;
   z-index: 99999;
+  min-width: 46px;
 }
 
 #site-lang-toggle {
-  background: transparent;
-  border: 2px solid var(--accent-color);
-  color: var(--accent-color);
-  padding: 10px 18px;
-  border-radius: 10px;
-  font-weight: 600;
+  background: rgba(10, 10, 10, 0.58);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: #ffffff;
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  line-height: 1;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
 
 #site-lang-toggle:hover {
-  background: var(--accent-color);
-  color: var(--contrast-color);
+  background: #ffffff;
+  border-color: #ffffff;
+  color: #111111;
+  transform: translateY(-1px);
 }
 .header {
   color: var(--default-color);
