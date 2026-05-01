@@ -351,6 +351,13 @@
         padding: 22px 20px;
       }
     }
+
+    /* ── Language Toggle ── */
+    .lang-gr { display: none; }
+    body.greek .lang-en { display: none !important; }
+    body.greek .lang-gr { display: block; }
+    body.greek span.lang-gr,
+    body.greek a.lang-gr { display: inline; }
   </style>
 
   <!-- =======================================================
@@ -367,7 +374,7 @@
   
 
   <!-- Site language toggle (top-right) -->
-  <button id="site-lang-toggle" class="btn btn-sm btn-outline-primary" style="position:fixed; top:12px; right:12px; z-index:99999; background: rgba(255, 255, 255, 0); color:#fff; border-color: rgba(255,255,255,0.3); border-radius: 999px; padding: 6px 12px; font-weight:700; font-size: 0.75rem;">EN</button>
+  <button id="site-lang-toggle" onclick="toggleSiteLang()" class="btn btn-sm btn-outline-primary" style="position:fixed; top:12px; right:12px; z-index:99999; background: rgba(255, 255, 255, 0); color:#fff; border-color: rgba(255,255,255,0.3); border-radius: 999px; padding: 6px 12px; font-weight:700; font-size: 0.75rem;">EN</button>
 
   <!-- Contrast helper: when user scrolls away from the hero, add .alt to make the button visible on light backgrounds -->
   <style>
@@ -404,15 +411,15 @@
 
     <nav id="navmenu" class="navmenu">
       <ul>
-        <li><a href="#hero" class="active"><i class="bi bi-house navicon"></i>Home</a></li>
-        <li><a href="#about"><i class="bi bi-person navicon"></i> About</a></li>
-        <li><a href="#resume"><i class="bi bi-file-earmark-text navicon"></i> Resume</a></li>
-        <li><a href="#projects"><i class="bi bi-github navicon"></i> Projects</a></li>
+        <li><a href="#hero" class="active"><i class="bi bi-house navicon"></i><span class="lang-en">Home</span><span class="lang-gr">Αρχική</span></a></li>
+        <li><a href="#about"><i class="bi bi-person navicon"></i> <span class="lang-en">About</span><span class="lang-gr">Σχετικά</span></a></li>
+        <li><a href="#resume"><i class="bi bi-file-earmark-text navicon"></i> <span class="lang-en">Resume</span><span class="lang-gr">Βιογραφικό</span></a></li>
+        <li><a href="#projects"><i class="bi bi-github navicon"></i> <span class="lang-en">Projects</span><span class="lang-gr">Πρότζεκτ</span></a></li>
         <!-- <li><a href="#certifications"><i class="bi bi-patch-check navicon"></i> Certifications</a></li> -->
         
          
         </li>
-        <li><a href="#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
+        <li><a href="#contact"><i class="bi bi-envelope navicon"></i> <span class="lang-en">Contact</span><span class="lang-gr">Επικοινωνία</span></a></li>
       </ul>
     </nav>
 
@@ -426,15 +433,15 @@
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
         <h2><span class="highlight-gold">Mike</span><span class="highlight-blue">Votis</span></h2>
-        <p>I'm <span class="typed" data-typed-items="Youtuber,Developer,Designer, Editor ">Designer</span></p>
+        <p><span class="lang-en">I'm <span class="typed" data-typed-items="Youtuber,Developer,Designer, Editor ">Designer</span></span><span class="lang-gr">Είμαι <span class="typed-gr"></span></span></p>
       </div>
     </section><!-- /Hero Section -->
 
 <!-- About Section -->
 <section id="about" class="about section">
   <div class="about-header-box" data-aos="fade-up" data-aos-delay="100">
-    <h2>About <span class="highlight-gold">me</span></h2>
-    <p>
+    <h2><span class="lang-en">About <span class="highlight-gold">me</span></span><span class="lang-gr">Σχετικά με <span class="highlight-gold">εμένα</span></span></h2>
+    <p class="lang-en">
       I am <strong>Michail Votis</strong>, a twelve year old kid who has been involved in
       <span class="highlight-blue">robotics</span> and
       <span class="highlight-gold">programming</span> since I was 7 years old.
@@ -442,14 +449,22 @@
       I really like programming and web development and my dream is to become a
       <span class="highlight-blue">programmer</span>.
     </p>
+    <p class="lang-gr">
+      Είμαι ο <strong>Μιχάλης Βώτης</strong>, ένα δωδεκάχρονο παιδί που ασχολείται με
+      <span class="highlight-blue">ρομποτική</span> και
+      <span class="highlight-gold">προγραμματισμό</span> από τα 7 μου χρόνια.
+      Έχω δημιουργήσει ένα μικρό κανάλι στο <strong>YouTube</strong> το οποίο προσπαθώ να αναπτύξω.
+      Μου αρέσει πολύ ο προγραμματισμός και η ανάπτυξη ιστοσελίδων και το όνειρό μου είναι να γίνω
+      <span class="highlight-blue">προγραμματιστής</span>.
+    </p>
   </div>
 </section>
         
          
           
 <h2 class="about-subtitle">
-  <span class="highlight-gold">Web developer</span> &amp;
-  <span class="highlight-blue">Youtuber</span>
+  <span class="lang-en"><span class="highlight-gold">Web developer</span> &amp; <span class="highlight-blue">Youtuber</span></span>
+  <span class="lang-gr"><span class="highlight-gold">Προγραμματιστής Ιστού</span> &amp; <span class="highlight-blue">Youtuber</span></span>
 </h2>
 
 <div class="about-info-box">
@@ -458,13 +473,13 @@
       <ul class="about-info-list">
         <li>
           <i class="bi bi-chevron-right"></i>
-          <strong>Birthday:</strong>
-          <span>7 January 2014</span>
+          <strong><span class="lang-en">Birthday:</span><span class="lang-gr">Γενέθλια:</span></strong>
+          <span class="lang-en">7 January 2014</span><span class="lang-gr">7 Ιανουαρίου 2014</span>
         </li>
 
         <li>
           <i class="bi bi-chevron-right"></i>
-          <strong>My channel:</strong>
+          <strong><span class="lang-en">My channel:</span><span class="lang-gr">Το κανάλι μου:</span></strong>
           <a href="https://www.youtube.com/@mikevotis" target="_blank" id="channel" class="channel-btn">
             Mikevotis2150
           </a>
@@ -472,8 +487,8 @@
 
         <li>
           <i class="bi bi-chevron-right"></i>
-          <strong>City:</strong>
-          <span>Thessaloniki, Greece</span>
+          <strong><span class="lang-en">City:</span><span class="lang-gr">Πόλη:</span></strong>
+          <span class="lang-en">Thessaloniki, Greece</span><span class="lang-gr">Θεσσαλονίκη, Ελλάδα</span>
         </li>
       </ul>
     </div>
@@ -482,7 +497,7 @@
       <ul class="about-info-list">
         <li>
           <i class="bi bi-chevron-right"></i>
-          <strong>Age:</strong>
+          <strong><span class="lang-en">Age:</span><span class="lang-gr">Ηλικία:</span></strong>
           <span>12</span>
         </li>
 
@@ -494,14 +509,14 @@
 
         <li>
           <i class="bi bi-chevron-right"></i>
-          <strong>School:</strong>
+          <strong><span class="lang-en">School:</span><span class="lang-gr">Σχολείο:</span></strong>
           <span>Anatolia College</span>
         </li>
       </ul>
     </div>
   </div>
 
-  <p class="about-description">
+  <p class="about-description lang-en">
     I am a developer and I have been learning programming languages such as
     <span class="highlight-gold">HTML</span>,
     <span class="highlight-blue">CSS</span>,
@@ -509,6 +524,15 @@
     I also have knowledge of video editing software such as Davinci Resolve and Photoshop.
     I am constantly trying to learn new things and improve my
     <span class="highlight-gold">skills</span>.
+  </p>
+  <p class="about-description lang-gr">
+    Είμαι προγραμματιστής και μαθαίνω γλώσσες προγραμματισμού όπως
+    <span class="highlight-gold">HTML</span>,
+    <span class="highlight-blue">CSS</span>,
+    JavaScript, Python, C++, και Java, ενώ παρακολουθώ μαθήματα στη <a href="https://greece.alg.academy/" target="_blank">Algorithmics</a>.
+    Έχω επίσης γνώσεις σε λογισμικά επεξεργασίας βίντεο όπως Davinci Resolve και Photoshop.
+    Προσπαθώ συνεχώς να μαθαίνω νέα πράγματα και να βελτιώνω τις
+    <span class="highlight-gold">δεξιότητές</span> μου.
   </p>
 </div>
 
@@ -521,7 +545,7 @@
         <div class="stats-item">
           <i class="bi bi-emoji-smile"></i>
           <span data-purecounter-start="0" data-purecounter-end="2" data-purecounter-duration="1" class="purecounter"></span>
-          <p><strong>Happy Clients</strong></p>
+          <p><strong><span class="lang-en">Happy Clients</span><span class="lang-gr">Ευχαριστημένοι Πελάτες</span></strong></p>
         </div>
       </div>
 
@@ -529,7 +553,7 @@
         <div class="stats-item">
           <i class="bi bi-journal-richtext"></i>
           <span data-purecounter-start="0" data-purecounter-end="12" data-purecounter-duration="1" class="purecounter"></span>
-          <p><strong>Projects</strong></p>
+          <p><strong><span class="lang-en">Projects</span><span class="lang-gr">Πρότζεκτ</span></strong></p>
         </div>
       </div>
 
@@ -537,7 +561,7 @@
         <div class="stats-item">
           <i class="bi bi-headset"></i>
           <span data-purecounter-start="0" data-purecounter-end="20" data-purecounter-duration="1" class="purecounter"></span>
-          <p><strong>Hours Of Support</strong></p>
+          <p><strong><span class="lang-en">Hours Of Support</span><span class="lang-gr">Ώρες Υποστήριξης</span></strong></p>
         </div>
       </div>
 
@@ -545,7 +569,7 @@
         <div class="stats-item">
           <i class="bi bi-people"></i>
           <span data-purecounter-start="0" data-purecounter-end="1" data-purecounter-duration="1" class="purecounter"></span>
-          <p><strong>Hard Worker</strong></p>
+          <p><strong><span class="lang-en">Hard Worker</span><span class="lang-gr">Εργατικός</span></strong></p>
         </div>
       </div>
 
@@ -557,8 +581,9 @@
 <section id="skills" class="skills section">
 
   <div class="container section-title" data-aos="fade-up">
-    <h2>Skills</h2>
-    <p class="section-subtext">Some of the skills and tools I use in programming, design, and content creation.</p>
+    <h2><span class="lang-en">Skills</span><span class="lang-gr">Δεξιότητες</span></h2>
+    <p class="section-subtext lang-en">Some of the skills and tools I use in programming, design, and content creation.</p>
+    <p class="section-subtext lang-gr">Μερικές από τις δεξιότητες και τα εργαλεία που χρησιμοποιώ στον προγραμματισμό, τον σχεδιασμό και τη δημιουργία περιεχομένου.</p>
   </div>
 
   <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -640,33 +665,53 @@
 <section id="resume" class="resume section">
 
   <div class="container section-title" data-aos="fade-up">
-    <h2>Resume</h2>
+    <h2><span class="lang-en">Resume</span><span class="lang-gr">Βιογραφικό</span></h2>
   </div>
 
   <div class="container" data-aos="fade-up" data-aos-delay="100">
     <div class="resume-box">
-      <p>
+      <p class="lang-en">
         Hi! I'm <strong>Michail Votis</strong>, and I'm <strong>12 years old</strong>.
         I have loved <span class="highlight-blue">robotics</span> and
         <span class="highlight-gold">programming</span> since I was 7 years old,
         and since then I have been trying to learn new things all the time.
       </p>
+      <p class="lang-gr">
+        Γεια! Είμαι ο <strong>Μιχάλης Βώτης</strong> και είμαι <strong>12 χρονών</strong>.
+        Αγαπώ τη <span class="highlight-blue">ρομποτική</span> και τον
+        <span class="highlight-gold">προγραμματισμό</span> από τα 7 μου χρόνια,
+        και από τότε προσπαθώ συνεχώς να μαθαίνω νέα πράγματα.
+      </p>
 
-      <p>
+      <p class="lang-en">
         I created a small <strong>YouTube channel</strong>, which I continue to develop step by step.
         I really enjoy programming and web development, and my dream is to become a
         <span class="highlight-blue">programmer</span>.
       </p>
+      <p class="lang-gr">
+        Δημιούργησα ένα μικρό <strong>κανάλι στο YouTube</strong>, το οποίο συνεχίζω να αναπτύσσω βήμα βήμα.
+        Μου αρέσει πολύ ο προγραμματισμός και η ανάπτυξη ιστοσελίδων, και το όνειρό μου είναι να γίνω
+        <span class="highlight-blue">προγραμματιστής</span>.
+      </p>
 
-      <p>
+      <p class="lang-en">
         I am learning languages like <span class="highlight-gold">HTML</span>,
         <span class="highlight-blue">CSS</span>, JavaScript, Python, C++, and Java,
         while also experimenting with creative tools like <strong>DaVinci Resolve</strong>,
         <strong>Photoshop</strong>, and <strong>Canva</strong>.
       </p>
+      <p class="lang-gr">
+        Μαθαίνω γλώσσες όπως <span class="highlight-gold">HTML</span>,
+        <span class="highlight-blue">CSS</span>, JavaScript, Python, C++, και Java,
+        ενώ πειραματίζομαι και με δημιουργικά εργαλεία όπως <strong>DaVinci Resolve</strong>,
+        <strong>Photoshop</strong> και <strong>Canva</strong>.
+      </p>
 
-      <p>
+      <p class="lang-en">
         I am always trying to improve, create new projects, and share my ideas with others. 🚀
+      </p>
+      <p class="lang-gr">
+        Προσπαθώ πάντα να βελτιώνομαι, να δημιουργώ νέα πρότζεκτ και να μοιράζομαι τις ιδέες μου με άλλους. 🚀
       </p>
     </div>
   </div>
@@ -678,8 +723,9 @@
 <section id="projects" class="projects section">
 
   <div class="container section-title" data-aos="fade-up">
-    <h2>Projects</h2>
-    <p class="section-subtext">A space for my best work. Each project card links directly to my GitHub.</p>
+    <h2><span class="lang-en">Projects</span><span class="lang-gr">Πρότζεκτ</span></h2>
+    <p class="section-subtext lang-en">A space for my best work. Each project card links directly to my GitHub.</p>
+    <p class="section-subtext lang-gr">Ένας χώρος για τις καλύτερες δουλειές μου. Κάθε κάρτα πρότζεκτ συνδέεται απευθείας με το GitHub μου.</p>
   </div>
 
   <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -691,9 +737,10 @@
           <div class="showcase-body">
             <span class="showcase-tag">GitHub Project</span>
             <h3>T-shirt Maker</h3>
-            <p>It is a Python project that allows users to design and customize their own T-shirts.</p>
+            <p class="lang-en">It is a Python project that allows users to design and customize their own T-shirts.</p>
+            <p class="lang-gr">Ένα πρότζεκτ Python που επιτρέπει στους χρήστες να σχεδιάσουν και να προσαρμόσουν το δικό τους μπλουζάκι.</p>
             <div class="showcase-links">
-              <a href="https://github.com/MikeVotis-dev/Mike-Votis-projects/blob/main/Tshirt_maker.py" target="_blank" rel="noopener noreferrer" class="showcase-button">Open on GitHub</a>
+              <a href="https://github.com/MikeVotis-dev/Mike-Votis-projects/blob/main/Tshirt_maker.py" target="_blank" rel="noopener noreferrer" class="showcase-button"><span class="lang-en">Open on GitHub</span><span class="lang-gr">Άνοιγμα στο GitHub</span></a>
             </div>
           </div>
         </article>
@@ -704,13 +751,17 @@
           <img src="assets/img/github-cover.jpeg" alt="Should I Buy This project preview" class="showcase-image">
           <div class="showcase-body">
             <span class="showcase-tag">GitHub Project</span>
-            <h3>Should I Buy This?</h3>
-            <p>
+            <h3><span class="lang-en">Should I Buy This?</span><span class="lang-gr">Να το Αγοράσω;</span></h3>
+            <p class="lang-en">
               A smart budget calculator that helps users decide whether they should buy an item,
               calculate monthly savings, and see when they can afford it.
             </p>
+            <p class="lang-gr">
+              Ένας έξυπνος υπολογιστής προϋπολογισμού που βοηθά τους χρήστες να αποφασίσουν αν αξίζει να αγοράσουν κάτι,
+              να υπολογίσουν τις μηνιαίες αποταμιεύσεις και να δουν πότε μπορούν να το αντέξουν οικονομικά.
+            </p>
             <div class="showcase-links">
-              <a href="https://github.com/MikeVotis-dev/Mike-Votis-projects/blob/main/Should_I_buy_this.py" target="_blank" rel="noopener noreferrer" class="showcase-button">Open on GitHub</a>
+              <a href="https://github.com/MikeVotis-dev/Mike-Votis-projects/blob/main/Should_I_buy_this.py" target="_blank" rel="noopener noreferrer" class="showcase-button"><span class="lang-en">Open on GitHub</span><span class="lang-gr">Άνοιγμα στο GitHub</span></a>
             </div>
           </div>
         </article>
@@ -721,13 +772,17 @@
           <img src="assets/img/github-cover.jpeg" alt="Turtle Catch project preview" class="showcase-image">
           <div class="showcase-body">
             <span class="showcase-tag">GitHub Project</span>
-            <h3>Turtle Catch</h3>
-            <p>
+            <h3><span class="lang-en">Turtle Catch</span><span class="lang-gr">Πιάσε τη Χελώνα</span></h3>
+            <p class="lang-en">
               An interactive Python game using Turtle graphics, where the player clicks on the
               moving turtle and tries to complete 5 catches to win.
             </p>
+            <p class="lang-gr">
+              Ένα διαδραστικό παιχνίδι Python με γραφικά Turtle, όπου ο παίκτης κάνει κλικ στην
+              κινούμενη χελώνα και προσπαθεί να κάνει 5 πιασίματα για να κερδίσει.
+            </p>
             <div class="showcase-links">
-              <a href="https://github.com/MikeVotis-dev/Mike-Votis-projects/blob/main/turtle.catch.py" target="_blank" rel="noopener noreferrer" class="showcase-button">Open on GitHub</a>
+              <a href="https://github.com/MikeVotis-dev/Mike-Votis-projects/blob/main/turtle.catch.py" target="_blank" rel="noopener noreferrer" class="showcase-button"><span class="lang-en">Open on GitHub</span><span class="lang-gr">Άνοιγμα στο GitHub</span></a>
             </div>
           </div>
         </article>
@@ -742,9 +797,12 @@
 <section id="contact" class="contact section">
 
   <div class="container section-title" data-aos="fade-up">
-    <h2>Contact</h2>
-    <p class="section-subtext">
+    <h2><span class="lang-en">Contact</span><span class="lang-gr">Επικοινωνία</span></h2>
+    <p class="section-subtext lang-en">
       Feel free to send me a message for collaborations, projects, or anything you would like to ask.
+    </p>
+    <p class="section-subtext lang-gr">
+      Στείλε μου ένα μήνυμα για συνεργασίες, πρότζεκτ ή οτιδήποτε θέλεις να ρωτήσεις.
     </p>
   </div>
 
@@ -757,8 +815,8 @@
             <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
               <i class="bi bi-geo-alt flex-shrink-0"></i>
               <div>
-                <h3>Address</h3>
-                <p>Thermi, Thessaloniki, Greece 57001</p>
+                <h3><span class="lang-en">Address</span><span class="lang-gr">Διεύθυνση</span></h3>
+                <p><span class="lang-en">Thermi, Thessaloniki, Greece 57001</span><span class="lang-gr">Θέρμη, Θεσσαλονίκη, Ελλάδα 57001</span></p>
               </div>
             </div>
 
@@ -786,34 +844,34 @@
             <div class="row gy-4">
 
               <div class="col-md-6">
-                <label for="name-field" class="pb-2">Your Name</label>
+                <label for="name-field" class="pb-2"><span class="lang-en">Your Name</span><span class="lang-gr">Το Όνομά σου</span></label>
                 <input type="text" name="name" id="name-field" class="form-control" required>
               </div>
 
               <div class="col-md-6">
-                <label for="email-field" class="pb-2">Your Email</label>
+                <label for="email-field" class="pb-2"><span class="lang-en">Your Email</span><span class="lang-gr">Το Email σου</span></label>
                 <input type="email" class="form-control" name="email" id="email-field" required>
               </div>
 
               <div class="col-md-12">
-                <label for="subject-field" class="pb-2">Subject</label>
+                <label for="subject-field" class="pb-2"><span class="lang-en">Subject</span><span class="lang-gr">Θέμα</span></label>
                 <input type="text" class="form-control" name="subject" id="subject-field" required>
               </div>
 
               <div class="col-md-12">
-                <label for="message-field" class="pb-2">Message</label>
+                <label for="message-field" class="pb-2"><span class="lang-en">Message</span><span class="lang-gr">Μήνυμα</span></label>
                 <textarea class="form-control" name="message" rows="8" id="message-field" required></textarea>
               </div>
 
               <div class="col-md-12">
                 <div class="loading">Loading</div>
                 <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
+                <div class="sent-message"><span class="lang-en">Your message has been sent. Thank you!</span><span class="lang-gr">Το μήνυμά σου εστάλη. Ευχαριστώ!</span></div>
               </div>
 
               <div class="col-md-12 text-center">
                 <input type="hidden" name="_replyto" id="_replyto-field">
-                <button type="submit" class="contact-btn">Send Message</button>
+                <button type="submit" class="contact-btn"><span class="lang-en">Send Message</span><span class="lang-gr">Αποστολή</span></button>
               </div>
 
             </div>
@@ -832,15 +890,15 @@
   <div class="container">
     <div class="footer-box">
       <div class="copyright text-center">
-        <p>© <span>Copyright</span> <strong class="px-1 sitename">MikeVotis</strong> <span>All Rights Reserved</span></p>
+        <p>© <span><span class="lang-en">Copyright</span><span class="lang-gr">Πνευματικά Δικαιώματα</span></span> <strong class="px-1 sitename">MikeVotis</strong> <span><span class="lang-en">All Rights Reserved</span><span class="lang-gr">Όλα τα Δικαιώματα Κατοχυρωμένα</span></span></p>
       </div>
 
       <div class="credits text-center">
         <p>Designed by <a href="https://bootstrapmade.com/" target="_blank">BootstrapMade</a> and distributed by <a href="https://themewagon.com" target="_blank">ThemeWagon</a>.</p>
-        <p class="footer-made">But programmed by <span class="highlight-blue">Mike Votis</span> </p>
+        <p class="footer-made"><span class="lang-en">But programmed by</span><span class="lang-gr">Αλλά προγραμματίστηκε από</span> <span class="highlight-blue">Mike Votis</span> </p>
         <a href="privacy-policy.html" class="showcase-button">
   <i class="bi bi-file-text"></i>
-  Privacy Policy
+  <span class="lang-en">Privacy Policy</span><span class="lang-gr">Πολιτική Απορρήτου</span>
 </a>
         
       </div>
@@ -867,6 +925,45 @@
 <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <!-- Language Toggle Logic -->
+  <script>
+    // Initialize Greek typed animation (English one is handled by main.js)
+    window.addEventListener('load', function() {
+      var typedGrEl = document.querySelector('.typed-gr');
+      if (typedGrEl) {
+        window._typedGrInstance = new Typed('.typed-gr', {
+          strings: ['Youtuber', 'Προγραμματιστής', 'Σχεδιαστής', 'Επεξεργαστής'],
+          loop: true,
+          typeSpeed: 100,
+          backSpeed: 50,
+          backDelay: 2000
+        });
+      }
+
+      // Restore saved language preference
+      if (localStorage.getItem('siteLang') === 'gr') {
+        document.body.classList.add('greek');
+        document.getElementById('site-lang-toggle').innerText = 'GR';
+      }
+    });
+
+    function toggleSiteLang() {
+      var btn = document.getElementById('site-lang-toggle');
+      var body = document.body;
+      var switchingToGreek = !body.classList.contains('greek');
+
+      if (switchingToGreek) {
+        body.classList.add('greek');
+        btn.innerText = 'GR';
+        localStorage.setItem('siteLang', 'gr');
+      } else {
+        body.classList.remove('greek');
+        btn.innerText = 'EN';
+        localStorage.setItem('siteLang', 'en');
+      }
+    }
+  </script>
 
 </body>
 
