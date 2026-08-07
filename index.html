@@ -400,8 +400,8 @@
 
 <body class="index-page">
   <script>
-    // Quick toggle: set to true for always-on maintenance mode; false keeps normal site unless ?mode=maintenance.
-    const maintenanceMode = false;
+    // Quick toggle: set to true for always-on maintenance mode; set false to restore normal site (or use ?mode=maintenance temporarily).
+    const maintenanceMode = true;
     const queryMode = new URLSearchParams(window.location.search).get('mode');
     if (maintenanceMode || (!maintenanceMode && queryMode === 'maintenance')) {
       document.body.classList.add('maintenance-mode');
@@ -409,7 +409,7 @@
   </script>
 
   <div id="maintenance-screen">
-    <img src="assets/img/maintenance-under-construction.png" alt="Portfolio under construction">
+    <img src="https://github.com/user-attachments/assets/5d244c2f-4ffd-45ef-b867-3a78f97bc3c7" onerror="this.onerror=null;this.src='assets/img/maintenance-under-construction.png';" alt="Portfolio under construction">
   </div>
 
   
