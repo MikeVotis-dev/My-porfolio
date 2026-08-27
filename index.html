@@ -618,15 +618,18 @@
     }
 
     #contact .contact-box > .section-title h2 {
+      display: inline-block;
       margin-bottom: 14px;
+      padding-bottom: 20px;
       text-align: center;
     }
 
     #contact .contact-box > .section-title h2::after {
       display: block;
-      left: auto !important;
+      left: 50% !important;
       width: 58px;
-      margin: 16px auto 0 !important;
+      margin: 0 !important;
+      transform: translateX(-50%);
       background: linear-gradient(90deg, var(--accent-gold), var(--accent-blue));
     }
 
