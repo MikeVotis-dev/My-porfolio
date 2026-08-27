@@ -45,10 +45,11 @@
       max-width: 900px;
       margin: 40px auto;
       padding: 40px;
-      background: var(--panel-black);
-      border: 1px solid var(--panel-border);
-      border-radius: 18px;
-      box-shadow: 0 12px 34px rgba(0, 0, 0, 0.22);
+      background:
+        linear-gradient(135deg, rgba(20, 35, 48, 0.96), rgba(22, 24, 31, 0.94) 54%, rgba(43, 33, 17, 0.88));
+      border: 1px solid rgba(86, 204, 242, 0.18);
+      border-radius: 22px;
+      box-shadow: 0 18px 46px rgba(0, 0, 0, 0.26), inset 0 1px 0 rgba(255, 255, 255, 0.06);
     }
 
     h1 {
@@ -110,17 +111,18 @@
     .lang-btn {
       padding: 10px 20px;
       border-radius: 20px;
-      border: 2px solid var(--accent-gold);
-      background: transparent;
-      color: var(--accent-gold) !important;
+      border: 1px solid rgba(86, 204, 242, 0.28);
+      background: rgba(255, 255, 255, 0.07);
+      color: #ffffff !important;
       cursor: pointer;
       font-weight: 700 !important;
       transition: all 0.3s ease;
     }
 
     .lang-btn.active {
-      background: var(--accent-gold) !important;
-      color: #111111 !important;
+      background: linear-gradient(135deg, var(--accent-blue), var(--accent-gold)) !important;
+      color: #071015 !important;
+      border-color: transparent;
     }
 
     .lang-btn:hover {
@@ -141,8 +143,9 @@
       gap: 8px;
       padding: 12px 24px;
       margin-bottom: 30px;
-      background: linear-gradient(90deg, var(--accent-gold), #d89016);
-      color: #111111 !important;
+      background: linear-gradient(135deg, rgba(86, 204, 242, 0.16), rgba(244, 185, 66, 0.14));
+      border: 1px solid rgba(86, 204, 242, 0.28);
+      color: #ffffff !important;
       text-decoration: none;
       border-radius: 20px;
       font-weight: 800 !important;
@@ -151,7 +154,8 @@
 
     .back-button:hover {
       transform: translateY(-2px);
-      filter: brightness(1.05);
+      border-color: rgba(244, 185, 66, 0.45);
+      filter: none;
     }
 
     .update-date {
