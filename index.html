@@ -619,11 +619,14 @@
 
     #contact .contact-box > .section-title h2 {
       margin-bottom: 14px;
+      text-align: center;
     }
 
     #contact .contact-box > .section-title h2::after {
-      margin-left: auto;
-      margin-right: auto;
+      display: block;
+      left: auto !important;
+      width: 58px;
+      margin: 16px auto 0 !important;
       background: linear-gradient(90deg, var(--accent-gold), var(--accent-blue));
     }
 
@@ -671,7 +674,7 @@
 
     .footer {
       margin: auto 0 0 !important;
-      padding: 36px 0 0 !important;
+      padding: 36px 0 72px !important;
     }
 
     .footer-box {
@@ -697,6 +700,7 @@
 
     .footer .footer-privacy-link {
       margin-top: 10px;
+      margin-bottom: 8px;
       background: linear-gradient(135deg, rgba(86, 204, 242, 0.16), rgba(244, 185, 66, 0.14)) !important;
       border: 1px solid rgba(86, 204, 242, 0.28) !important;
       color: #ffffff !important;
