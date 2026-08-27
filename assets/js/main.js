@@ -80,6 +80,7 @@
         '#navmenu a[href="#about"]': `<i class="bi bi-person navicon"></i> About`,
         '#navmenu a[href="#resume"]': `<i class="bi bi-file-earmark-text navicon"></i> Resume`,
         '#navmenu a[href="#projects"]': `<i class="bi bi-github navicon"></i> Projects`,
+        '#navmenu a[href="#certifications"]': `<i class="bi bi-patch-check navicon"></i> Certifications`,
         '#navmenu a[href="#contact"]': `<i class="bi bi-envelope navicon"></i> Contact`,
         '#hero p': `I'm <span class="typed" data-typed-items="Youtuber,Developer,Designer,Editor">Designer</span>`,
         '#about h2': `About <span class="highlight-gold">me</span>`,
@@ -112,6 +113,13 @@
         '#projects .col-lg-4:nth-child(2) .showcase-body p': `A smart budget calculator that helps users decide whether they should buy an item, calculate monthly savings, and see when they can afford it.`,
         '#projects .col-lg-4:nth-child(3) .showcase-body p': `An interactive Python game using Turtle graphics, where the player clicks on the moving turtle and tries to complete 5 catches to win.`,
         '#projects .showcase-button': `Open on GitHub`,
+        '#certifications .section-title h2': `Certifications`,
+        '#certifications .section-subtext': `Courses, certificates, and learning achievements I want to highlight.`,
+        '#certifications .col-lg-4:nth-child(1) h3': `CS50x: Introduction to Computer Science`,
+        '#certifications .col-lg-4:nth-child(1) p': `Completed CS50x: Introduction to Computer Science, including computer science fundamentals, programming logic, problem sets, and a final project.`,
+        '#certifications .col-lg-4:nth-child(2) h3': `Python Start: Python Basics`,
+        '#certifications .col-lg-4:nth-child(2) p': `Completed the Algorithmics Python Start program, covering Python basics, control structures, functions, modules, OOP, and PyGame across 64 academic hours.`,
+        '#certifications .showcase-button': `View Certificate`,
         '#contact .section-title h2': `Contact`,
         '#contact .section-subtext': `Feel free to send me a message for collaborations, projects, or anything you would like to ask.`,
         '#contact .info-item:nth-child(1) h3': `Address`,
@@ -188,6 +196,17 @@
       }
     }
   };
+
+  Object.assign(translations.el.content, {
+    '#navmenu a[href="#certifications"]': `<i class="bi bi-patch-check navicon"></i> Πιστοποιήσεις`,
+    '#certifications .section-title h2': `Πιστοποιήσεις`,
+    '#certifications .section-subtext': `Μαθήματα, πιστοποιητικά και εκπαιδευτικές επιτυχίες που θέλω να παρουσιάσω.`,
+    '#certifications .col-lg-4:nth-child(1) h3': `CS50x: Εισαγωγή στην Επιστήμη Υπολογιστών`,
+    '#certifications .col-lg-4:nth-child(1) p': `Ολοκλήρωσα το CS50x: Introduction to Computer Science, μαθαίνοντας βασικές αρχές επιστήμης υπολογιστών, προγραμματιστική λογική, problem sets και ένα τελικό project.`,
+    '#certifications .col-lg-4:nth-child(2) h3': `Python Start: Βασικά Python`,
+    '#certifications .col-lg-4:nth-child(2) p': `Ολοκλήρωσα το πρόγραμμα Python Start της Algorithmics, με Python basics, control structures, functions, modules, OOP και PyGame σε 64 ακαδημαϊκές ώρες.`,
+    '#certifications .showcase-button': `Προβολή Πιστοποιητικού`
+  });
 
   function initTyped() {
     const selectTyped = document.querySelector('.typed');
